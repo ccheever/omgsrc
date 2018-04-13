@@ -47,9 +47,10 @@ MenuManager = class{
 
 	draw = function(self)
 		local batch = g.batch
-		batch:bind()
+		-- batch:bind()
+		batch:flush()
 		self:propogate('draw', batch)
-		batch:unbind()
+		-- batch:unbind()
 		lg.draw(batch)
 		batch:clear()
 	end,

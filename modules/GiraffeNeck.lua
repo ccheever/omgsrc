@@ -358,11 +358,19 @@ GiraffeNeck = class{
 		if mesh then
 			self.mesh = mesh
 		else
-			local mesh = lg.newMesh(mesh_vertices, texture, 'triangles') 
+			-- local mesh = lg.newMesh(mesh_vertices, texture, 'triangles') 
+			local mesh = lg.newMesh(mesh_vertices, 'triangles')
+			mesh:setTexture(texture)
+			
 			self.mesh = mesh
 			g["mesh"] = mesh
 		end
-		--self.mesh = mesh or lg.newMesh(mesh_vertices, self.texture, 'triangles')
+
+		local m = mesh or lg.newMesh(mesh_vertices, 'triangles')
+		m:setTexture(self.texture)
+		self.mesh = m
+
+		-- self.mesh = mesh or lg.newMesh(mesh_vertices, self.texture, 'triangles')
 
 		local gulps = self.gulps
 		for i,g in ipairs(gulps) do

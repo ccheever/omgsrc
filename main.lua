@@ -1,3 +1,9 @@
+if love.touch then
+	function love.touch.getTouchCount()
+		return #love.touch.getTouches()
+	end
+end
+
 function love.load()
 
 	love.graphics.setBackgroundColor(0, 0, 0)

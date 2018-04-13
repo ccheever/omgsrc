@@ -55,7 +55,7 @@ DrawManager = class{
 		local _, objects = manager:get()
 		local queue = self.queue
 		local batch = self.batch
-		batch:bind()
+		batch:flush()
 
 		local count = 0
 		local n = -1
@@ -67,7 +67,7 @@ DrawManager = class{
 				
 				-- interrupt the batch to preserve correct depth ordering
 				if not batched then
-					batch:unbind()
+					-- batch:unbind()
 					if count ~= n then
 						draw(batch)
 					end
@@ -79,13 +79,13 @@ DrawManager = class{
 
 				-- rebind the batch for faster updating
 				if not batched then
-					batch:bind()
+					batch:flush()
 				end
 			end
 		end
 
 		-- finishing drawing all batched items before clearing
-		batch:unbind()
+		-- batch:unbind()
 		draw(batch)
 		batch:clear()
 

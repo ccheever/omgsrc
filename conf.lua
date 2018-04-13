@@ -7,7 +7,7 @@ function love.conf(t)
         landscaperight = true,
     }
     t.identity = "giraffe"
-    t.version = "0.9.1"
+    t.version = "0.10.2"
     t.console = false
     t.window.title = "oh my giraffe"
     t.window.icon = nil

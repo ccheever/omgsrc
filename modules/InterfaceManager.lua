@@ -102,7 +102,8 @@ InterfaceManager = class{
 	draw = function(self)
 
 		local batch = g.batch
-		batch:bind()
+		-- batch:bind()
+		batch:flush()
 
 		local flashes = self.flashes
 		for i,flash in ipairs(flashes) do
@@ -115,7 +116,7 @@ InterfaceManager = class{
 		self.notes:draw(batch)
 		self.scoring:draw(batch)
 
-		batch:unbind()
+		-- batch:unbind()
 		lg.draw(batch)
 		batch:clear()
 

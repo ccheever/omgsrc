@@ -127,7 +127,7 @@ ViewportRenderer = class{
 
 		-- draw color overlay
 		lg.setColor(color)
-		lg.setBlendMode('multiplicative')
+		lg.setBlendMode('multiply')
 		-- this is only an overlay...
 		-- so what I really want is to fade from the background color full opacity to 
 		-- to this, and then fade from the background color what opacity? uuuh
